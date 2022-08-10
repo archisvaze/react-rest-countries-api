@@ -18,39 +18,42 @@ export default function Details() {
 
     useEffect(() => {
         for (let country of state.countries)
-        // eslint-disable-next-line
+            // eslint-disable-next-line
             if (country.name.official == name) {
                 dispatch(setCountry(country))
-                // eslint-disable-next-line
-                languages = [];
-                // eslint-disable-next-line
-                languagesEntries = Object.entries(state.country.languages)
-                for (let array of languagesEntries) {
-                    languages.push(array[1]);
-                    languages.push(" ")
-                }
-            
-                //get currencies
-                // eslint-disable-next-line
-                currencies = [];
-                // eslint-disable-next-line
-                currenciesEntries = Object.entries(state.country.currencies);
-                console.log(currenciesEntries)
-                for (let array of currenciesEntries) {
-                    currencies.push(array[1].name);
-                    currencies.push(" ");
-                    currencies.push(array[1].symbol);
-                }
+                 // eslint-disable-next-line
+                setTimeout(() => {
+                    // eslint-disable-next-line
+                    languages = [];
+                    // eslint-disable-next-line
+                    languagesEntries = Object.entries(state.country.languages)
+                    for (let array of languagesEntries) {
+                        languages.push(array[1]);
+                        languages.push(" ")
+                    }
+
+                    //get currencies
+                    // eslint-disable-next-line
+                    currencies = [];
+                    // eslint-disable-next-line
+                    currenciesEntries = Object.entries(state.country.currencies);
+                    console.log(currenciesEntries)
+                    for (let array of currenciesEntries) {
+                        currencies.push(array[1].name);
+                        currencies.push(" ");
+                        currencies.push(array[1].symbol);
+                    }
+
+                }, 1000)
                 break;
             }
-            // eslint-disable-next-line
-            
+        // eslint-disable-next-line
     }, [])
 
     console.log(state.country)
 
     //get languages
-   
+
 
     return (
         <div className={'details-container ' + state.theme}>
