@@ -11,39 +11,42 @@ export default function Details() {
     const state = useSelector(state => state.myState);
     const dispatch = useDispatch();
     let { name } = useParams();
-
+    let languages = [];
+    let languagesEntries = []
+    let currencies = [];
+    let currenciesEntries = Object.entries(state.country.currencies);
 
     useEffect(() => {
         for (let country of state.countries)
         // eslint-disable-next-line
             if (country.name.official == name) {
                 dispatch(setCountry(country))
+                languages = [];
+                languagesEntries = Object.entries(state.country.languages)
+                for (let array of languagesEntries) {
+                    languages.push(array[1]);
+                    languages.push(" ")
+                }
+            
+                //get currencies
+                currencies = [];
+                currenciesEntries = Object.entries(state.country.currencies);
+                console.log(currenciesEntries)
+                for (let array of currenciesEntries) {
+                    currencies.push(array[1].name);
+                    currencies.push(" ");
+                    currencies.push(array[1].symbol);
+                }
                 break;
             }
             // eslint-disable-next-line
+            
     }, [])
 
     console.log(state.country)
 
     //get languages
-    let languages = [];
-    let languagesEntries = Object.entries(state.country.languages)
-    for (let array of languagesEntries) {
-        languages.push(array[1]);
-        languages.push(" ")
-    }
-
-    //get currencies
-    let currencies = [];
-    let currenciesEntries = Object.entries(state.country.currencies);
-    console.log(currenciesEntries)
-    for (let array of currenciesEntries) {
-        currencies.push(array[1].name);
-        currencies.push(" ");
-        currencies.push(array[1].symbol);
-
-
-    }
+   
 
     return (
         <div className={'details-container ' + state.theme}>
