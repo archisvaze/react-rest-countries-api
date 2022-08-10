@@ -21,7 +21,9 @@ export default function Details() {
         // eslint-disable-next-line
             if (country.name.official == name) {
                 dispatch(setCountry(country))
+                // eslint-disable-next-line
                 languages = [];
+                // eslint-disable-next-line
                 languagesEntries = Object.entries(state.country.languages)
                 for (let array of languagesEntries) {
                     languages.push(array[1]);
@@ -29,7 +31,9 @@ export default function Details() {
                 }
             
                 //get currencies
+                // eslint-disable-next-line
                 currencies = [];
+                // eslint-disable-next-line
                 currenciesEntries = Object.entries(state.country.currencies);
                 console.log(currenciesEntries)
                 for (let array of currenciesEntries) {
