@@ -20,9 +20,8 @@ const mySlice = createSlice({
             state.countries = action.payload
         },
         setCountry: (state, action) => {
-            state.country = action.payload[0]
+            state.country = action.payload
         }
-
     }
 
 })
