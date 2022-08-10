@@ -2,16 +2,16 @@
 
 Link: https://tangerine-muffin-72703f.netlify.app/
 
-### See all countries from the API on the homepage and filter countries by region
+## See all countries from the API on the homepage and filter countries by region
 ![Screenshot 2022-08-10 205122](https://user-images.githubusercontent.com/92965519/183945536-4b25463d-60f1-400d-818c-dc43f5ba97e8.png)
 
-### Search for a country using an input field
+## Search for a country using an input field
 ![Screenshot 2022-08-10 205206](https://user-images.githubusercontent.com/92965519/183945624-73ffc67f-439e-4ce8-be85-b84563ea705b.png)
 
-### Click on a country to see more detailed information on a separate page
+## Click on a country to see more detailed information on a separate page
 ![Screenshot 2022-08-10 205331](https://user-images.githubusercontent.com/92965519/183945785-93b5f6c0-3cf3-4e64-a30a-b650dfe33a2b.png)
 
-### Toggle the color scheme between light and dark mode (optional)
+## Toggle the color scheme between light and dark mode (optional)
 ![Screenshot 2022-08-10 205250](https://user-images.githubusercontent.com/92965519/183945818-f77d2e43-76dd-49b2-aa2a-471d6cebe536.png)
 
 
