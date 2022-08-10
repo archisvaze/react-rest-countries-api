@@ -23,6 +23,7 @@ export default function Main() {
         } else {
             setfilteredList(state.countries.slice(0, 20))
         }
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
@@ -33,6 +34,7 @@ export default function Main() {
         setfilteredList([])
         let filteredArr = [];
         for (let country of state.countries) {
+            // eslint-disable-next-line
             if (country.region == region) {
                 filteredArr.push(country)
             }
@@ -45,6 +47,7 @@ export default function Main() {
         setfilteredList([])
         let filteredArr = [];
         for (let country of state.countries) {
+            // eslint-disable-next-line
             if (country.name.common.toLowerCase() == name.toLowerCase() || country.name.common.toLowerCase().includes(name.toLowerCase()) || country.name.official.toLowerCase() == name.toLowerCase() || country.name.official.toLowerCase().includes(name.toLowerCase())) {
                 filteredArr.push(country)
             }

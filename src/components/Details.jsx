@@ -15,10 +15,12 @@ export default function Details() {
 
     useEffect(() => {
         for (let country of state.countries)
+        // eslint-disable-next-line
             if (country.name.official == name) {
                 dispatch(setCountry(country))
                 break;
             }
+            // eslint-disable-next-line
     }, [])
 
     console.log(state.country)
