@@ -1,10 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 let initialState = {};
 if (localStorage.getItem("rest-countries-state") === null) {
-    initialState = { theme: "light", countries: [], country: {} };
+    initialState = {
+        theme: "light", countries: [], country: {
+            "name": { "common": "Germany", "official": "Federal Republic of Germany" },
+            "population": 83240525,
+            "region": "Europe",
+            "subregion": "Western Europe",
+            "capital": ["Berlin"],
+            "timezones": ["UTC+01:00"],
+            "flags": {
+                "png": "https://flagcdn.com/w320/de.png",
+                "svg": "https://flagcdn.com/de.svg"
+            },
+            "languages": { "deu": "German" },
+            "currencies": {
+                "EUR": {
+                    "name": "Euro",
+                    "symbol": "€"
+                }
+            },
+        }
+    };
 } else {
     initialState = JSON.parse(localStorage.getItem("rest-countries-state"))
 }
+
 
 
 const mySlice = createSlice({

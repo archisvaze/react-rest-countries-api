@@ -30,16 +30,16 @@ export default function Details() {
             // eslint-disable-next-line
             if (country.name.official == name) {
                 dispatch(setCountry(country));
-                break;
+                console.log(state.country)
+                setcommonName(state.country.name.common);
+                setofficialName(state.country.name.official)
+                setpopulation(state.country.population)
+                setregion(state.country.region)
+                setsubregion(state.country.subregion)
+                setcapital(state.country.capital)
+                settimezone(state.country.timezones)
             }
-        console.log(state.country)
-        setcommonName(state.country.name.common);
-        setofficialName(state.country.name.official)
-        setpopulation(state.country.population)
-        setregion(state.country.region)
-        setsubregion(state.country.subregion)
-        setcapital(state.country.capital)
-        settimezone(state.country.timezones)
+
 
 
         //get languages
