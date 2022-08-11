@@ -1,4 +1,4 @@
-# React | RREST Countries API | Redux 
+# React | REST Countries API | Redux 
 
 Link: https://tangerine-muffin-72703f.netlify.app/
 
