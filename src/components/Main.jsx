@@ -88,7 +88,7 @@ export default function Main() {
                     {filteredList.map(obj => {
                         return (
                             <Link key={obj.name.official} to={`/${obj.name.official}`}>
-                                <Card obj={obj} />
+                                <Card key={obj.name.official} obj={obj} />
                             </Link>
 
                         )
