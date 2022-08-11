@@ -301,3 +301,23 @@ button {
     }
 
 }
+@media screen and (min-width: 1280px) {
+
+    .details-info-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .details-flag {
+        width: 400px;
+        height: 100%
+    }
+    .details-inner-info{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+}
