@@ -11,40 +11,11 @@ export default function Details() {
     const state = useSelector(state => state.myState);
     const dispatch = useDispatch();
     let { name } = useParams();
-    let languages = [];
-    let languagesEntries = []
-    let currencies = [];
-    let currenciesEntries = Object.entries(state.country.currencies);
 
     useEffect(() => {
         for (let country of state.countries)
-            // eslint-disable-next-line
             if (country.name.official == name) {
-                dispatch(setCountry(country))
-                 // eslint-disable-next-line
-                setTimeout(() => {
-                    // eslint-disable-next-line
-                    languages = [];
-                    // eslint-disable-next-line
-                    languagesEntries = Object.entries(state.country.languages)
-                    for (let array of languagesEntries) {
-                        languages.push(array[1]);
-                        languages.push(" ")
-                    }
-
-                    //get currencies
-                    // eslint-disable-next-line
-                    currencies = [];
-                    // eslint-disable-next-line
-                    currenciesEntries = Object.entries(state.country.currencies);
-                    console.log(currenciesEntries)
-                    for (let array of currenciesEntries) {
-                        currencies.push(array[1].name);
-                        currencies.push(" ");
-                        currencies.push(array[1].symbol);
-                    }
-
-                }, 1000)
+                dispatch(setCountry(country));
                 break;
             }
         // eslint-disable-next-line
@@ -54,6 +25,27 @@ export default function Details() {
 
     //get languages
 
+    let languages = [];
+    if (state.country.languages) {
+        let languagesEntries = Object.entries(state.country.languages)
+        for (let array of languagesEntries) {
+            languages.push(array[1]);
+            languages.push(" ")
+        }
+    }
+
+    //get currencies
+
+    let currencies = [];
+    if (state.country.currencies) {
+        let currenciesEntries = Object.entries(state.country.currencies);
+        console.log(currenciesEntries)
+        for (let array of currenciesEntries) {
+            currencies.push(array[1].name);
+            currencies.push(" ");
+            currencies.push(array[1].symbol);
+        }
+    }
 
     return (
         <div className={'details-container ' + state.theme}>
