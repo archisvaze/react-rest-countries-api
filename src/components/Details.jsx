@@ -12,16 +12,12 @@ export default function Details() {
     const dispatch = useDispatch();
     let { name } = useParams();
 
-    useEffect(() => {
-        for (let country of state.countries)
-            // eslint-disable-next-line
-            if (country.name.official == name) {
-                dispatch(setCountry(country));
-                break;
-            }
+    for (let country of state.countries)
         // eslint-disable-next-line
-    }, [])
-
+        if (country.name.official == name) {
+            dispatch(setCountry(country));
+            break;
+        }
     console.log(state.country)
 
     //get languages
@@ -61,7 +57,7 @@ export default function Details() {
 
                 <div className="details-info-container">
 
-                    <img className='details-flag' src={state.country.flags.png ? state.country.flags.png : ''} alt="" />
+                    {/* <img className='details-flag' src={state.country.flags.png} alt="" /> */}
 
                     <div className="details-info">
                         <h2>{state.country.name.common}</h2>
