@@ -61,7 +61,7 @@ export default function Details() {
 
                 <div className="details-info-container">
 
-                    <img className='details-flag' src={state.country.flags.png} alt="" />
+                    <img className='details-flag' src={state.country.flags.png ? state.country.flags.png : ''} alt="" />
 
                     <div className="details-info">
                         <h2>{state.country.name.common}</h2>
