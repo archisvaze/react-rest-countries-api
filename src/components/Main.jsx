@@ -73,13 +73,17 @@ export default function Main() {
                         <button onClick={() => {
                             setshowFilters(!showFilters)
                         }} className="filter-button">Filter by Region <span style={{ transform: showFilters === true ? "rotate(180deg)" : "rotate(0deg)", transition: "0.5s" }}>▼</span></button>
-                        <div style={{ display: showFilters === true ? "flex" : "none" }} className="filter">
+
+                        <div style={{ display: showFilters === true ? "flex" : "none" }} className="filter" onMouseLeave={()=>{
+                            setshowFilters(false)
+                        }}>
                             <p onClick={() => filter("Africa")} className="filter-link">Africa</p>
                             <p onClick={() => filter("Americas")} className="filter-link">America</p>
                             <p onClick={() => filter("Asia")} className="filter-link">Asia</p>
                             <p onClick={() => filter("Europe")} className="filter-link">Europe</p>
                             <p onClick={() => filter("Oceania")} className="filter-link">Oceania</p>
                         </div>
+
                     </div>
 
                 </div>
